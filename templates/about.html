@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    
+	
+<img src="{{doctor["image_url"]}}" alt="doctor's image" style="width:100px;height:100px;">
+	<p>{{doctor["name"]}}<br>
+
+	{{doctor["rating"]}}<br>
+	{{"/n".join(doctor["location"]["display_address"])}}<br>
+	{{doctor["categories"][0]["title"]}}
+	<br>
+</p>
+<h2>Similar '{{ category_name}}' doctors </h2>
+{%for doc in list_doctors_info %}
+
+	<li><a href="/doctor/{{doc['id']}}">{{doc["name"]}}</a></li>
+{% endfor %}
+
+</body>
+</html>

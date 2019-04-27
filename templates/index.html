@@ -1,0 +1,24 @@
+<html>
+<h1> Doctors names</h1>
+<form action="/" method="POST">
+	<h3> Doctor's type: </h3>
+  <select name="speciality">
+	{%for speciality in doc_speciality %}
+	<option value="{{speciality}}">{{speciality}}</option>
+       {% endfor %}
+  </select>
+
+	<h3> Location:</h3>
+ <select name="location">
+  	{% for loc in location %}
+  	<option value="{{loc}}">{{loc}}</option>
+  	{% endfor %}
+  </select>
+
+  <input type="submit">
+ </form> 	
+ 	<h2>Doctors in {{selected_location}}</h2>
+	{%for doc in list_doctors_info %}	
+		<li><a href="/doctor/{{doc['id']}}">{{doc["name"]}}</a></li>
+	{% endfor %}
+</html>
