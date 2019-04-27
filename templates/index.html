@@ -17,8 +17,13 @@
 
   <input type="submit">
  </form> 	
- 	<h2>Doctors in {{selected_location}}</h2>
-	{%for doc in list_doctors_info %}	
-		<li><a href="/doctor/{{doc['id']}}">{{doc["name"]}}</a></li>
-	{% endfor %}
+
+<h2>Doctors in {{selected_location}}</h2>
+
+{%for doc in list_doctors_info %}	
+	<li>
+		<a href="/doctor/{{doc['id']}}">{{doc["name"]}}</a>
+	</li>
+{% endfor %}
+
 </html>
